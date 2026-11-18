@@ -9,9 +9,12 @@
 # terminate the game
 
 import random
-
-emojis={'r':'🥌','p':'📜','s':'✂'}
-choices=('r','p','s')
+ROCK='r'
+SCISSORS='s'
+PAPER='p'
+emojis={ROCK:'🥌',PAPER:'📜',SCISSORS:'✂'}
+print(tuple(emojis.keys()))
+choices=(tuple(emojis.keys()))
 def get_user_choice():
     while True:
      user_choice= input('Rock,Paper, or Scissors (r/p/s):').lower()
@@ -28,9 +31,9 @@ def determine_winner(user_choice,computer_choice):
         if user_choice== computer_choice:
             print('lol you tied with the computer!')
         elif (
-            (user_choice=='r' and computer_choice=='s') or
-            (user_choice== 's' and computer_choice=='p') or 
-            (user_choice=='p' and computer_choice =='r')) :
+            (user_choice==ROCK and computer_choice==SCISSORS) or
+            (user_choice== SCISSORS and computer_choice==PAPER) or 
+            (user_choice==PAPER and computer_choice ==ROCK)) :
             print('you win')
         else:
             print('you lost!')  
